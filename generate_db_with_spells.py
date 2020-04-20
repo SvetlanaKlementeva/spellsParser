@@ -101,34 +101,3 @@ for spell in spells['allSpells']:
 
 with open('all_spells_db.json', 'w') as f:
      json.dump(out_db, f, indent=2, ensure_ascii=False)
-
-# out=[]
-#
-# for spell in spells['allSpells']:
-#     spell_out = generate_spell(spell['ru'])
-#     for spell_item in spell_out:
-#         out.append(spell_iem)
-#
-#
-# with open('out.json', 'w') as f:
-#      json.dump(out, f, indent=2, ensure_ascii=False)
-
-
-# print(spells['allSpells'][0]['ru'])
-
-# out = {}
-
-# for spell in spells.items():
-#     print(generate_spell(spell[1]))
-#     out.update(generate_spell(spell[1]))
-#     print("\n")
-
-
-# with open('spell.json') as f:
-#     spell = json.load(f, encoding="utf-8")
-# spell_output_object = generate_spell(spell)
-#
-# print(spell_output_object)
-#
-# with open('out.json', 'w') as f:
-#     json.dump(spell_output_object, f, indent=2, ensure_ascii=False)
