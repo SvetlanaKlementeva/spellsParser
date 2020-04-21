@@ -3,7 +3,7 @@
 
 import json
 import datetime
-
+import os
 
 def generate_spells_out_json(input_spells_json):
     out_json = []
@@ -39,3 +39,5 @@ with open(out_file_name, 'w') as f:
 print("\nFinished!!")
 print("Get your spells from [" + out_file_name + "] file")
 print("P.S. Please remove '[' and ']' symbols in the begin and end of file before copy spells to import file")
+
+os.system('pause')
