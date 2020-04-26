@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import json
-import random
-import string
+from common import generate_id
 
 
 def generate_spell_item(spell_id, lvl, item_name, item_value):
@@ -13,10 +12,6 @@ def generate_spell_item(spell_id, lvl, item_name, item_value):
             "max": "",
             "id": "-" + generate_id(19)
         }
-
-
-def generate_id(size):
-    return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(size))
 
 
 spell_schools = {'ограждение': "abjuration",
@@ -81,11 +76,12 @@ def generate_spell(input_spell_json):
     comp_s = generate_spell_item(spell_id, lvl, "spellcomp_s", spellcomp_s)
     comp_m = generate_spell_item(spell_id, lvl, "spellcomp_m", spellcomp_m)
     source = generate_spell_item(spell_id, lvl, "spellsource", spellsource)
+    details_flag = generate_spell_item(spell_id, lvl, "details-flag", "0")
 
     options_flag = generate_spell_item(spell_id, lvl, "options-flag", "0")
 
     return [name, school, casting_time, spell_range, target, materials, text, duration, comp_v, comp_s, comp_m, source,
-            options_flag]
+            details_flag, options_flag]
 
 
 with open('someSpells.json', encoding='utf-8', newline='') as f:
